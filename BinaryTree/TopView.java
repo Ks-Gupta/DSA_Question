@@ -14,6 +14,25 @@ class TreeNode {
 }
 
 public class TopView {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
+
+        Solution solution = new Solution();
+        List result = solution.topView(root);
+
+        System.out.println("Top View: " + result);
+    }
+}
+
+
+class Solution {
+    // Nested generic Pair class
     static class Pair<  K , V  > {
         private K key;
         private V value;
@@ -85,20 +104,4 @@ public class TopView {
     }
 }
 
-public class Main {
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
 
-        TopView solution = new TopView();
-        List result = solution.topView(root);
-
-        System.out.println("Top View: " + result);
-    }
-    
-}
